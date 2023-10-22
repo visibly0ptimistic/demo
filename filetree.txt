@@ -10,7 +10,12 @@
 │   │   │   └── com
 │   │   │       └── example
 │   │   │           └── demo
-│   │   │               └── DemoApplication.java
+│   │   │               ├── DemoApplication.java
+│   │   │               └── stack
+│   │   │                   ├── StackArrayBased.java
+│   │   │                   ├── StackController.java
+│   │   │                   ├── StackException.java
+│   │   │                   └── Stackable.java
 │   │   └── resources
 │   │       ├── application.properties
 │   │       ├── static
@@ -27,12 +32,38 @@
     │   └── com
     │       └── example
     │           └── demo
+    │               ├── DemoApplication$1.class
     │               ├── DemoApplication.class
-    │               └── HelloController.class
+    │               └── stack
+    │                   ├── StackArrayBased.class
+    │                   ├── StackController.class
+    │                   ├── StackException.class
+    │                   └── Stackable.class
+    ├── demo-0.0.1-SNAPSHOT.jar
+    ├── demo-0.0.1-SNAPSHOT.jar.original
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    ├── maven-archiver
+    │   └── pom.properties
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       │       ├── createdFiles.lst
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           └── default-testCompile
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    ├── surefire-reports
+    │   ├── TEST-com.example.demo.DemoApplicationTests.xml
+    │   └── com.example.demo.DemoApplicationTests.txt
     └── test-classes
         └── com
             └── example
                 └── demo
                     └── DemoApplicationTests.class
 
-24 directories, 12 files
+38 directories, 29 files
