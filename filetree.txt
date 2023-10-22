@@ -1,0 +1,38 @@
+.
+├── HELP.md
+├── filetree.txt
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── example
+│   │   │           └── demo
+│   │   │               └── DemoApplication.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── com
+│               └── example
+│                   └── demo
+│                       └── DemoApplicationTests.java
+└── target
+    ├── classes
+    │   ├── application.properties
+    │   └── com
+    │       └── example
+    │           └── demo
+    │               ├── DemoApplication.class
+    │               └── HelloController.class
+    └── test-classes
+        └── com
+            └── example
+                └── demo
+                    └── DemoApplicationTests.class
+
+24 directories, 12 files
