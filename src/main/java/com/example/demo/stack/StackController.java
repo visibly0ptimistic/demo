@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -75,11 +76,11 @@ public class StackController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/toString")
-    public ResponseEntity<Map<String, Object>> toStringRepresentation() {
+    @GetMapping("/stackList")
+    public ResponseEntity<Map<String, Object>> stackList() {
         Map<String, Object> response = new HashMap<>();
-        String stackString = stack.toString();
-        response.put("message", stackString);
+        List<Integer> stackList = stack.toList();  // Using the toList() method here
+        response.put("stack", stackList);  // Using "stack" as the key for the list
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
