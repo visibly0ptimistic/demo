@@ -1,5 +1,8 @@
 package com.example.demo.stack;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StackArrayBased<E> implements Stackable<E> {
 
     // array to hold the elements of the stack
@@ -59,16 +62,11 @@ public class StackArrayBased<E> implements Stackable<E> {
         return (E) this.items[this.top];
     }
 
-    @Override
-    public String toString() {
-        String s = "[";
+    public List<E> toList() {
+        List<E> list = new ArrayList<>();
         for (int i = top; i >= 0; i--) {
-            s = s + this.items[i].toString();
-            if (i != 0)
-                s = s + ", ";
+            list.add((E) items[i]);
         }
-        s = s + "]";
-        return s;        
+        return list;
     }
-
 }
