@@ -18,7 +18,7 @@ public class StackController {
         Map<String, Object> response = new HashMap<>();
         try {
             stack.push(value);
-            response.put("message", "Pushed " + value);
+            response.put("pushedValue", value);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (StackException e) {
             response.put("error", e.getMessage());
@@ -31,7 +31,7 @@ public class StackController {
         Map<String, Object> response = new HashMap<>();
         try {
             Integer poppedValue = stack.pop();
-            response.put("message", "Popped: " + poppedValue);
+            response.put("poppedValue", poppedValue);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (StackException e) {
             response.put("error", e.getMessage());
@@ -44,7 +44,7 @@ public class StackController {
         Map<String, Object> response = new HashMap<>();
         try {
             Integer topValue = stack.peek();
-            response.put("message", "Top of stack: " + topValue);
+            response.put("peekValue", topValue);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (StackException e) {
             response.put("error", e.getMessage());
@@ -56,7 +56,7 @@ public class StackController {
     public ResponseEntity<Map<String, Object>> isEmpty() {
         Map<String, Object> response = new HashMap<>();
         boolean empty = stack.isEmpty();
-        response.put("message", "Is Empty: " + empty);
+        response.put("isEmpty", empty);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -64,7 +64,7 @@ public class StackController {
     public ResponseEntity<Map<String, Object>> isFull() {
         Map<String, Object> response = new HashMap<>();
         boolean full = stack.isFull();
-        response.put("message", "Is Full: " + full);
+        response.put("isFull", full);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
