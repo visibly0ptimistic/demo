@@ -68,6 +68,20 @@ public class StackController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @PostMapping("/setMaxSize")
+    public ResponseEntity<Map<String, Object>> setMaxSize(@RequestParam Integer newSize) {
+    Map<String, Object> response = new HashMap<>();
+    try {
+        stack.setMaxSize(newSize);
+        response.put("message", "Max size set to " + newSize);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    } catch (Exception e) {
+        response.put("error", e.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+    }
+
+
     @PostMapping("/popAll")
     public ResponseEntity<Map<String, Object>> popAll() {
         Map<String, Object> response = new HashMap<>();

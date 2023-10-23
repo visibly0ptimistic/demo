@@ -8,7 +8,13 @@ public class StackArrayBased<E> implements Stackable<E> {
     // array to hold the elements of the stack
     private Object[] items; // Java does not allow Generic arrays
     private int top; // index of the top
-    private static final int MAX = 50; // arbitrary choice
+    private int MAX = 5;  // Default value
+
+    public void setMaxSize(int newSize) {
+        this.MAX = newSize;
+        this.items = new Object[MAX];  // Resize the array when MAX changes
+        this.top = -1;  // Reset top index
+    }
 
     public StackArrayBased() {
         this.items = new Object[MAX];
