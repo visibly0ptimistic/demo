@@ -38,35 +38,33 @@ public class StackArrayBased<E> implements Stackable<E> {
 
     @Override
     public void push(E newItem) throws StackException {
-        if (this.isFull()) {
-            System.out.println("Stack is at maximum capacity.");
+        if (this.isFull())
             throw new StackException("Stack is at maximum capacity.");
-        }
 
         this.top++;
         this.items[top] = newItem;
+
     }
 
     @Override
     public E pop() throws StackException {
-        if (this.isEmpty()) {
-            System.out.println("Stack is empty!");
+        if (this.isEmpty())
             throw new StackException("Stack is empty!");
-        }
 
         E item = (E) this.items[this.top];
+
+        // optional free memory
         this.items[this.top] = null;
+
         this.top--;
         return item;
     }
 
     @Override
     public E peek() throws StackException {
-        if (this.isEmpty()) {
-            System.out.println("Stack is empty!");
+        if (this.isEmpty())
             throw new StackException("Stack is empty!");
-        }
-        
+
         return (E) this.items[this.top];
     }
 
