@@ -14,11 +14,21 @@ public class StackController {
     private final StackArrayBased<Integer> stack = new StackArrayBased<>();
 
     @PostMapping("/push")
-    public ResponseEntity<Map<String, Object>> push(@RequestParam Integer value) {
+    public ResponseEntity<Map<String, Object>> push(@RequestParam(required = false) Integer value) {
         Map<String, Object> response = new HashMap<>();
+        if (value == null) {
+            response.put("error", "Value cannot be null");
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
+        if (stack.isFull()) {
+            response.put("error", "Stack is full");
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
         try {
             stack.push(value);
-            response.put("message", "Pushed " + value);
+            response.put("message", "Pushed: " + value);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (StackException e) {
             response.put("error", e.getMessage());
@@ -29,6 +39,11 @@ public class StackController {
     @PostMapping("/pop")
     public ResponseEntity<Map<String, Object>> pop() {
         Map<String, Object> response = new HashMap<>();
+        if (stack.isEmpty()) {
+            response.put("error", "Stack is empty");
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
         try {
             Integer poppedValue = stack.pop();
             response.put("message", "Popped: " + poppedValue);
@@ -42,6 +57,11 @@ public class StackController {
     @GetMapping("/peek")
     public ResponseEntity<Map<String, Object>> peek() {
         Map<String, Object> response = new HashMap<>();
+        if (stack.isEmpty()) {
+            response.put("error", "Stack is empty");
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
         try {
             Integer topValue = stack.peek();
             response.put("message", "Top of stack: " + topValue);
