@@ -29,8 +29,11 @@ public class StackController {
         try {
             stack.push(value);
             response.put("message", "Pushed: " + value);
+            response.put("stack", stack.toList()); // Include the server-side stack in the response using the toList() method
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (StackException e) {
+            // Log the exception for debugging
+            System.out.println("StackException: " + e.getMessage());
             response.put("error", e.getMessage());
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
