@@ -30,13 +30,13 @@ git clone https://github.com/username/repository.git
 cd repository
 ```
 
-1. Build the application:
+2. Build the application:
 
 ```sh
 mvn clean install
 ```
 
-1. Run the application:
+3. Run the application:
 
 ```sh
 mvn spring-boot:run
