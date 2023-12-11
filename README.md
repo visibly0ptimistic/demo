@@ -19,19 +19,19 @@ git clone https://github.com/username/repository.git
 cd repository
 ```
 
-1. Navigate to the application directory:
+2. Navigate to the application directory:
 
 ```sh
 cd src/main/java/com/example/demo/<application-directory>
 ```
 
-1. Build the application:
+3. Build the application:
 
 ```sh
 mvn clean install
 ```
 
-1. Run the application:
+4. Run the application:
 
 ```sh
 mvn spring-boot:run
