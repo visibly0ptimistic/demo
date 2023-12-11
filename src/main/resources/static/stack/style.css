@@ -1,0 +1,83 @@
+  /* Base layout styling */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Style buttons */
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Style input field */
+  input[type="text"], input[type="number"] {
+    padding: 5px;
+    border: 1px solid #007BFF;
+    border-radius: 3px;
+  }
+
+  /* Style log area */
+  #log {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    width: 100%;
+  }
+
+  .control-group, .button-group {
+    margin-bottom: 10px;
+  }
+
+  /* Flexbox for control group */
+  .control-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .control-group label, .control-group input {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .control-group label {
+    flex-basis: 150px;
+    flex-shrink: 0;
+  }
+
+  /* Responsiveness for smaller screens */
+  @media (max-width: 480px) {
+    .control-group label {
+      flex-basis: 100px;
+    }
+
+    .control-group input {
+      flex-grow: 1;
+    }
+  }
+
+  #stack-svg {
+    border: 1px solid #ccc;
+    height: 400px; /* Fixed height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }

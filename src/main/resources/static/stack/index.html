@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stack Visualization</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- Stack Visualization -->
+    <svg id="stack-svg" width="100%" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet"></svg>
+
+    <!-- Controls and Buttons -->
+    <div class="controls">
+      <div class="control-group">
+        <label for="push-value">Value to push:</label>
+        <input type="text" id="push-value" name="push-value" placeholder="Value to push">
+      </div>
+
+      <div class="control-group">
+        <label for="max-size">Max Stack Size:</label>
+        <input type="number" id="max-size" name="max-size" min="1" max="13" value="5">
+      </div>
+
+      <div class="button-group">
+        <button onclick="setMaxSize()">Set Max Size</button>
+        <button onclick="pushItem()">Push</button>
+        <button onclick="popItem()">Pop</button>
+      </div>
+
+      <div class="button-group">
+        <button onclick="peekItem()">Peek</button>
+        <button onclick="isEmpty()">Is Empty?</button>
+        <button onclick="isFull()">Is Full?</button>
+      </div>
+
+      <div class="button-group">
+        <button onclick="popAll()">Pop All</button>
+        <button onclick="clearLog()">Clear Log</button>
+      </div>
+    </div>
+
+    <!-- Log Area -->
+    <div id="log"></div>
+    <script src="./script.js"></script>
+  </div>
