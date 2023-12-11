@@ -15,7 +15,7 @@ To run any of the applications, you need to have Java and Maven installed on you
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/username/repository.git
+git clone https://github.com/visibly0ptimistic/demo.git
 cd repository
 ```
 
