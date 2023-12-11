@@ -11,10 +11,19 @@ public class StackArrayBased<E> implements Stackable<E> {
     private int MAX = 5;  // Default value
 
     public void setMaxSize(int newSize) {
+        if (newSize < 0) {
+            throw new IllegalArgumentException("Size must be positive");
+        }
+        if (newSize < this.top + 1) {
+            throw new StackException("New size cannot be less than current number of elements in the stack.");
+        }
         this.MAX = newSize;
-        this.items = new Object[MAX];  // Resize the array when MAX changes
-        this.top = -1;  // Reset top index
-    }
+        Object[] newItems = new Object[MAX];
+        for (int i = 0; i <= this.top; i++) {
+            newItems[i] = this.items[i];
+        }
+        this.items = newItems;
+    }    
 
     public StackArrayBased() {
         this.items = new Object[MAX];
